@@ -33,25 +33,65 @@
         </h2>
         <div id="collapseBook" class="accordion-collapse collapse" aria-labelledby="headingBook" data-bs-parent="#bookAccordion">
           <div class="accordion-body">
-            <form>
+            <form action="https://formsubmit.io/send/bryangbates@gmail.com" method="POST" class="needs-validation" novalidate>
+              <!-- Hidden field to help prevent spam submissions -->
+              <input type="text" name="_formsubmit_id" style="display:none">
               <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Your name">
+                <input name="name" type="text" class="form-control" id="name" placeholder="Your Name" required>
+                <div class="invalid-feedback">
+                  Please enter your name.
+                </div>
               </div>
               <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                <label for="email" class="form-label">Email Address</label>
+                <input name="email" type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                <div class="invalid-feedback">
+                  Please enter a valid email address.
+                </div>
               </div>
               <div class="mb-3">
                 <label for="eventDate" class="form-label">Event Date</label>
-                <input type="date" class="form-control" id="eventDate">
+                <input name="eventDate" type="date" class="form-control" id="eventDate" required>
+                <div class="invalid-feedback">
+                  Please select the event date.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="venue" class="form-label">Event Location/Venue</label>
+                <input name="venue" type="text" class="form-control" id="venue" placeholder="Event Location/Venue" required>
+                <div class="invalid-feedback">
+                  Please enter the event location/venue.
+                </div>
               </div>
               <div class="mb-3">
                 <label for="message" class="form-label">Message</label>
-                <textarea class="form-control" id="message" rows="3" placeholder="Tell us about your event"></textarea>
+                <textarea name="message" class="form-control" id="message" rows="3" placeholder="Tell us about your event" required></textarea>
+                <div class="invalid-feedback">
+                  Please enter a message.
+                </div>
               </div>
               <button type="submit" class="btn btn-primary">Submit Booking Request</button>
             </form>
+
+            <!-- Client-side validation script using Bootstrap's validation API -->
+            <script>
+              // Disable form submissions if there are invalid fields
+              (function () {
+                'use strict';
+                var forms = document.querySelectorAll('.needs-validation');
+                Array.prototype.slice.call(forms)
+                  .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                      if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                      }
+                      form.classList.add('was-validated');
+                    }, false);
+                  });
+              })();
+            </script>
           </div>
         </div>
       </div>
@@ -61,31 +101,30 @@
   <!-- Performance Schedule Grid -->
   <section class="container my-5">
     <h2 class="mb-4">Upcoming Shows</h2>
+    <!-- Show Cards -->
     <div class="row row-cols-1 row-cols-md-3 g-4">
-      <!-- Example Show Card -->
       <div class="col">
         <div class="card">
           <img src="show1.jpg" class="card-img-top" alt="Show 1 Thumbnail">
           <div class="card-body">
-            <h5 class="card-title">Show Title 1</h5>
+            <h5 class="card-title">Hopshire Farm and Brewery</h5>
             <p class="card-text">
-              <strong>Date:</strong> MM/DD/YYYY<br>
-              <strong>Time:</strong> HH:MM<br>
-              <strong>Venue:</strong> Venue Name
+              4/18/25<br>
+              6:00pm to 8:00pm<br>
+              <a href="https://hopshire.com/" target="_blank">https://hopshire.com/</a>
             </p>
           </div>
         </div>
       </div>
-      <!-- Additional show cards can be added in similar columns -->
       <div class="col">
         <div class="card">
           <img src="show2.jpg" class="card-img-top" alt="Show 2 Thumbnail">
           <div class="card-body">
-            <h5 class="card-title">Show Title 2</h5>
+            <h5 class="card-title">Personal Best</h5>
             <p class="card-text">
-              <strong>Date:</strong> MM/DD/YYYY<br>
-              <strong>Time:</strong> HH:MM<br>
-              <strong>Venue:</strong> Venue Name
+              4/26/25<br>
+              6:00pm to 9:00pm<br>
+              <a href="https://www.personalbestbrewing.com/" target="_blank">https://www.personalbestbrewing.com/</a>
             </p>
           </div>
         </div>
@@ -94,11 +133,11 @@
         <div class="card">
           <img src="show3.jpg" class="card-img-top" alt="Show 3 Thumbnail">
           <div class="card-body">
-            <h5 class="card-title">Show Title 3</h5>
+            <h5 class="card-title">Summer Hill Brewery</h5>
             <p class="card-text">
-              <strong>Date:</strong> MM/DD/YYYY<br>
-              <strong>Time:</strong> HH:MM<br>
-              <strong>Venue:</strong> Venue Name
+              5/10/25<br>
+              6:00pm to 9:00pm<br>
+              <a href="https://summerhillbrewing.com/" target="_blank">https://summerhillbrewing.com/</a>
             </p>
           </div>
         </div>
@@ -109,29 +148,28 @@
   <!-- Meet the Band Grid -->
   <section class="container my-5">
     <h2 class="mb-4">Meet the Band</h2>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      <!-- Example Band Member Card -->
+    <!-- First Row: 4 Columns -->
+    <div class="row row-cols-1 row-cols-md-4 g-4">
       <div class="col">
         <div class="card">
           <img src="member1.jpg" class="card-img-top" alt="Band Member 1 Thumbnail">
           <div class="card-body">
-            <h5 class="card-title">Member Name 1</h5>
+            <h5 class="card-title">Ryan Holmes</h5>
             <p class="card-text">
-              <strong>Instrument:</strong> Guitar<br>
-              A brief bio about the band member.
+              <strong>Lead Vocals</strong><br>
+              Cofounder of The Time Riders and former All-State vocalist, Ryan has a charismatic stage presence and powerful voice that captures the attention of audiences. A baritone masquerading as a tenor, the versatility of his vocals can change from gravelly to smooth from song to song and are the signature of the band.
             </p>
           </div>
         </div>
       </div>
-      <!-- Additional band member cards -->
       <div class="col">
         <div class="card">
           <img src="member2.jpg" class="card-img-top" alt="Band Member 2 Thumbnail">
           <div class="card-body">
-            <h5 class="card-title">Member Name 2</h5>
+            <h5 class="card-title">David Wentzel</h5>
             <p class="card-text">
-              <strong>Instrument:</strong> Drums<br>
-              A brief bio about the band member.
+              <strong>Lead Guitar and Vocals</strong><br>
+              Cofounder of The Time Riders and fingerstyle extraordinaire, Dave brings impeccable technique and over half a century of guitar experience to the ensemble. Being the cofounder and having both a son (Gavin) and a son-in-law (Ryan) in the group along with all his talent truly makes Dave the father of the band.
             </p>
           </div>
         </div>
@@ -140,10 +178,76 @@
         <div class="card">
           <img src="member3.jpg" class="card-img-top" alt="Band Member 3 Thumbnail">
           <div class="card-body">
-            <h5 class="card-title">Member Name 3</h5>
+            <h5 class="card-title">Gavin Wentzel</h5>
             <p class="card-text">
-              <strong>Instrument:</strong> Bass<br>
-              A brief bio about the band member.
+              <strong>Keyboard and Vocals</strong><br>
+              Son of Dave and talented artist and songwriter of unique original music, Gavin adds depth and texture along with soulful vocal harmonies to the band. His mastery of the keys and energetic vocals are the featured acts throughout much of the group’s performances.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="member4.jpg" class="card-img-top" alt="Band Member 4 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">Jim Macmillan</h5>
+            <p class="card-text">
+              <strong>Rhythm Guitar and Vocals</strong><br>
+              Proprietor of the band’s practice facility and rhythm wizard, Jim is one of three pillars of the solid foundation that keep the band together and the crowd moving. The infectious rhythms and incredible hospitality and positivity provided by Jim are imperative to the group’s success.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Row: 4 Columns -->
+    <div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
+      <div class="col">
+        <div class="card">
+          <img src="member5.jpg" class="card-img-top" alt="Band Member 5 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">Chris Sideris</h5>
+            <p class="card-text">
+              <strong>Bass Guitar</strong><br>
+              Provider of grooves and opponent to sheet music, Chris is another pillar of the foundation of the band’s powerful sound. Chris is truly the heartbeat of The Time Riders and his deep driving basslines bring essential rhythm and groove to the ensemble.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="member6.jpg" class="card-img-top" alt="Band Member 6 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">Alex Ames</h5>
+            <p class="card-text">
+              <strong>Saxaphone, Percussion, Vocals</strong><br>
+              Saxophone ace and handheld percussion master, Alex is a talented vocalist and musician whose smooth vocal melodies and vibrant saxophone solos add a touch of class and excitement to the band’s performances. With Alex’s addition to the group, the band was able to add a wider range of songs to their repertoire.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <!-- Placeholder for Member 7 -->
+        <div class="card">
+          <img src="member7.jpg" class="card-img-top" alt="Band Member 7 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">Shirley Ladd</h5>
+            <p class="card-text">
+              <strong>Guitar and Vocals</strong><br>
+              Experienced performer and captivating vocalist, Shirley adds invaluable experience and vast knowledge of the local music scene in the Finger Lakes. Having performed all over the area for many years, she brings unmatched class and unwavering musical aptitude to this upstart group. Her classic style and composed demeanor add another layer to the range of the band.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <!-- Placeholder for Member 8 -->
+        <div class="card">
+          <img src="member8.jpg" class="card-img-top" alt="Band Member 8 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">Bryan Bates</h5>
+            <p class="card-text">
+              <strong>Drums</strong><br>
+              Rhythmic powerhouse and band logo designer, Bryan is the third pillar without which the band could not exist. Bryan found his love for the drums later in life but quickly developed a passion and skills for the kit. With his ability to keep the beat across diverse styles and genres, he is the true driver of the vehicle we call The Time Riders.
             </p>
           </div>
         </div>
@@ -153,11 +257,16 @@
 
   <!-- Footer -->
   <footer class="bg-dark text-white text-center p-4">
-    <p>&copy; 2025 The Time Riders. All rights reserved.</p>
+    <p>&copy; <span id="year"></span> The Time Riders. All rights reserved.</p>
     <p>
       <a href="https://www.instagram.com/thetimeriders" class="text-white">Instagram</a>
     </p>
   </footer>
+
+  <script>
+    // Get the element with id 'year' and set its text content to the current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 
   <!-- Bootstrap JS Bundle via CDN -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
