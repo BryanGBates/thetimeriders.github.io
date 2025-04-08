@@ -22,6 +22,7 @@ h2 {
   font-weight: 400;
   font-size: 3rem;
   margin-bottom: 0.5rem;
+  color: firebrick;
 }
 h3 {
   font-family: "Fredericka the Great", serif;
@@ -86,5 +87,5 @@ blockquote {
 }
 
 .accordion-button {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
