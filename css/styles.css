@@ -16,21 +16,21 @@ h1, h4, h5, h6 {
   color: #212529;
 }
 
-h1 { font-size: 2.5rem; }
+h1 { font-size: 4rem; }
 h2 {
   font-family: "Fredericka the Great", serif;
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 0.5rem;
 }
 h3 {
   font-family: "Fredericka the Great", serif;
   font-weight: 400;
-  font-size: 1.75rem;
+  font-size: 2.5rem;
   margin-bottom: 0.5rem;
 }
-h4 { font-size: 1.5rem; }
-h5 { font-size: 1.25rem; }
+h4 { font-size: 2rem; }
+h5 { font-size: 1.5rem; }
 h6 { font-size: 1rem; }
 
 /* Paragraphs */
