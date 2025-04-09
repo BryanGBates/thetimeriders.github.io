@@ -96,7 +96,8 @@ hr {
 }
 
 .accordion {
-	--bs-accordion-active-bg: lightgray;
+	--bs-accordion-active-bg: gainsboro;
+  --bs-accordion-border-color: silver;
 }
 
 .accordion-button {
