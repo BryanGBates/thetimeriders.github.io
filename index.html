@@ -60,24 +60,91 @@
             <div id="collapseBook" class="accordion-collapse collapse" aria-labelledby="headingBook" data-bs-parent="#bookAccordion">
               <div class="accordion-body">
 
-                <form action="https://formsubmit.co/bryangbates@gmail.com" method="POST">
-                  <!-- Optional redirect -->
+                <form action="https://formsubmit.co/bryangbates@gmail.com" method="POST" class="needs-validation" novalidate aria-label="Booking request form">
+                  <!-- FormSubmit.co fields -->
                   <input type="hidden" name="_next" value="https://bryangbates.github.io/thetimeriders.github.io/thanks.html">
-
-                  <!-- Anti-spam honeypot -->
-                  <input type="text" name="_honey" style="display:none">
-
-                  <!-- Disable captcha -->
                   <input type="hidden" name="_captcha" value="false">
+                  <input type="text" name="_honey" style="display:none" aria-hidden="true">
 
-                  <label for="name">Name</label>
-                  <input type="text" name="name" required>
+                  <!-- reCAPTCHA token field (will activate later) -->
+                  <!-- <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response"> -->
 
-                  <label for="email">Email</label>
-                  <input type="email" name="email" required>
+                  <!-- Name -->
+                  <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input name="name" type="text" class="form-control" id="name" placeholder="Your Name" required aria-required="true" aria-describedby="nameHelp">
+                    <div id="nameHelp" class="form-text">Please enter your full name.</div>
+                    <div class="invalid-feedback">Please enter your name.</div>
+                  </div>
 
-                  <input type="submit" value="Send">
+                  <!-- Email -->
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input name="email" type="email" class="form-control" id="email" placeholder="name@example.com" required aria-required="true" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                  </div>
+
+                  <!-- Event Date -->
+                  <div class="mb-3">
+                    <label for="eventDate" class="form-label">Event Date</label>
+                    <input name="eventDate" type="date" class="form-control" id="eventDate" required aria-required="true" aria-describedby="dateHelp">
+                    <div id="dateHelp" class="form-text">Select the date of your event.</div>
+                    <div class="invalid-feedback">Please select the event date.</div>
+                  </div>
+
+                  <!-- Venue -->
+                  <div class="mb-3">
+                    <label for="venue" class="form-label">Event Location/Venue</label>
+                    <input name="venue" type="text" class="form-control" id="venue" placeholder="Event Location/Venue" required aria-required="true" aria-describedby="venueHelp">
+                    <div id="venueHelp" class="form-text">Let us know where the event will be held.</div>
+                    <div class="invalid-feedback">Please enter the event location/venue.</div>
+                  </div>
+
+                  <!-- Message -->
+                  <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea name="message" class="form-control" id="message" rows="3" placeholder="Tell us about your event" required aria-required="true" aria-describedby="messageHelp"></textarea>
+                    <div id="messageHelp" class="form-text">Share any details or special requests.</div>
+                    <div class="invalid-feedback">Please enter a message.</div>
+                  </div>
+
+                  <!-- Submit -->
+                  <button type="submit" class="btn btn-primary">Submit Booking Request</button>
                 </form>
+
+                <!-- Bootstrap validation script -->
+                <script>
+                  (function () {
+                    'use strict';
+                    var forms = document.querySelectorAll('.needs-validation');
+                    Array.prototype.slice.call(forms).forEach(function (form) {
+                      form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                          event.preventDefault();
+                          event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+
+                        // reCAPTCHA (uncomment this when ready)
+                        /*
+                        if (form.checkValidity()) {
+                          event.preventDefault();
+                          grecaptcha.ready(function () {
+                            grecaptcha.execute('your_site_key_here', { action: 'submit' }).then(function (token) {
+                              document.getElementById('g-recaptcha-response').value = token;
+                              form.submit();
+                            });
+                          });
+                        }
+                        */
+                      }, false);
+                    });
+                  })();
+                </script>
+
+                <!-- reCAPTCHA script (load later when domain is ready) -->
+                <!-- <script src="https://www.google.com/recaptcha/api.js?render=your_site_key_here"></script> -->
 
               </div>
             </div>
