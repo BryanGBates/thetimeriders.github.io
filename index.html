@@ -59,53 +59,23 @@
             </p>
             <div id="collapseBook" class="accordion-collapse collapse" aria-labelledby="headingBook" data-bs-parent="#bookAccordion">
               <div class="accordion-body">
-                <form action="https://formsubmit.io/send/bryangbates@gmail.com" method="POST" class="needs-validation" novalidate>
-                  <!-- Hidden field to help prevent spam submissions -->
+
+                <form action="https://formsubmit.io/send/bryangbates@gmail.com" method="POST">
+                  <!-- Hidden honeypot to prevent spam -->
                   <input type="text" name="_formsubmit_id" style="display:none">
-                  <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input name="name" type="text" class="form-control" id="name" placeholder="Your Name" required>
-                    <div class="invalid-feedback">Please enter your name.</div>
-                  </div>
-                  <div class="mb-3">
-                    <label for="email" class="form-label">Email Address</label>
-                    <input name="email" type="email" class="form-control" id="email" placeholder="name@example.com" required>
-                    <div class="invalid-feedback">Please enter a valid email address.</div>
-                  </div>
-                  <div class="mb-3">
-                    <label for="eventDate" class="form-label">Event Date</label>
-                    <input name="eventDate" type="date" class="form-control" id="eventDate" required>
-                    <div class="invalid-feedback">Please select the event date.</div>
-                  </div>
-                  <div class="mb-3">
-                    <label for="venue" class="form-label">Event Location/Venue</label>
-                    <input name="venue" type="text" class="form-control" id="venue" placeholder="Event Location/Venue" required>
-                    <div class="invalid-feedback">Please enter the event location/venue.</div>
-                  </div>
-                  <div class="mb-3">
-                    <label for="message" class="form-label">Message</label>
-                    <textarea name="message" class="form-control" id="message" rows="3" placeholder="Tell us about your event" required></textarea>
-                    <div class="invalid-feedback">Please enter a message.</div>
-                  </div>
-                  <button type="submit" class="btn btn-primary">Submit Booking Request</button>
+
+                  <!-- Optional redirect after submission -->
+                  <input type="hidden" name="_redirect" value="https://yourwebsite.com/thank-you.html">
+
+                  <label for="name">Name</label>
+                  <input type="text" name="name" id="name" required>
+
+                  <label for="email">Email</label>
+                  <input type="email" name="email" id="email" required>
+
+                  <input type="submit" value="Send">
                 </form>
 
-                <!-- Client-side validation script -->
-                <script>
-                  (function () {
-                    'use strict';
-                    var forms = document.querySelectorAll('.needs-validation');
-                    Array.prototype.slice.call(forms).forEach(function (form) {
-                      form.addEventListener('submit', function (event) {
-                        if (!form.checkValidity()) {
-                          event.preventDefault();
-                          event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                      }, false);
-                    });
-                  })();
-                </script>
               </div>
             </div>
           </div>
