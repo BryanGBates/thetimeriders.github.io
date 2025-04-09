@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Time Riders</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Full Width Header -->
+  <header class="container-fluid p-0 position-relative">
+    <!-- Social Icons -->
+    <div class="position-absolute top-0 end-0 m-3 d-flex gap-2">
+      <a href="https://www.instagram.com/thetimeriders" target="_blank">
+        <img src="images/sm-instagram.png" alt="Instagram" style="width: 45px;">
+      </a>
+      <a href="http://www.youtube.com/@thetimeriders-607" target="_blank">
+        <img src="images/sm-youtube.png" alt="YouTube" style="width: 45px;">
+      </a>
+      <a href="https://open.spotify.com/artist/5Ql9mTmxMLD0pxVic2sWY9" target="_blank">
+        <img src="images/sm-spotify.png" alt="Spotify" style="width: 45px;">
+      </a>
+      <a class="pe-2" href="https://linktr.ee/thetimeriders" target="_blank">
+        <img src="images/sm-linktree.png" alt="Linktree" style="width: 45px;">
+      </a>
+    </div>
+
+    <div class="header-image" style="background-image: url('images/header.jpg'); background-size: cover; background-position: top; height: 400px;">
+      <div class="d-flex flex-column justify-content-center align-items-center h-100 text-white bg-dark bg-opacity-50">
+        <img src="images/the-time-riders-textmark-white.svg" alt="The Time Riders" class="mb-3 mx-2 float-right" style="max-width: 800px;">
+      </div>
+    </div>
+  </header>
+
+  <!-- Book the Band Accordion -->
+  <section class="container my-5">
+    <h2>Thanks!</h2>
+    <p>Thanks for reaching out to us! We'll get back to you as soon as possible.</p>
+    <p>The Time Riders</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center p-4">
+    <p>&copy; <span id="year"></span> The Time Riders. All rights reserved.</p>
+    <img src="images/the-time-riders-logo-white.svg" class="py-3" style="height: 200px;">
+  </footer>
+
+  <script>
+    // Get the element with id 'year' and set its text content to the current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Bootstrap JS Bundle via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+</html>
