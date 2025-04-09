@@ -20,7 +20,7 @@ h1 { font-size: 4rem; }
 h2 {
   font-family: "Fredericka the Great", serif;
   font-weight: 400;
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 0.5rem;
 }
 h3 {
@@ -81,7 +81,7 @@ blockquote {
 
 hr {
   border: none;
-  border-top: 6px dotted firebrick;
+  border-top: 7px dotted firebrick;
   opacity: 1;
 }
 
