@@ -94,3 +94,10 @@ hr {
 .accordion-button {
   font-size: 1.25rem;
 }
+
+/* Style placeholder text in all input and textarea fields */
+input::placeholder,
+textarea::placeholder {
+  color: var(--bs-secondary-color);
+  opacity: 0.50;
+}
