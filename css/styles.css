@@ -95,9 +95,26 @@ hr {
   font-size: 1.25rem;
 }
 
-/* Style placeholder text in all input and textarea fields */
-input::placeholder,
-textarea::placeholder {
+/* Style placeholder text in Bootstrap form fields */
+.form-control::placeholder {
+  color: var(--bs-secondary-color);
+  opacity: 0.50;
+}
+
+/* Optional: add vendor prefixes for broader support */
+.form-control::-webkit-input-placeholder {
+  color: var(--bs-secondary-color);
+  opacity: 0.50;
+}
+.form-control::-moz-placeholder {
+  color: var(--bs-secondary-color);
+  opacity: 0.50;
+}
+.form-control:-ms-input-placeholder {
+  color: var(--bs-secondary-color);
+  opacity: 0.50;
+}
+.form-control:-moz-placeholder {
   color: var(--bs-secondary-color);
   opacity: 0.50;
 }
