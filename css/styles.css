@@ -38,6 +38,10 @@ p {
   margin-bottom: 1rem;
 }
 
+.firebrick {
+  color: firebrick;
+}
+
 /* Lists */
 ul, ol {
   margin-bottom: 1rem;
@@ -89,6 +93,10 @@ hr {
 
 .card {
   border: none!important;
+}
+
+.accordion {
+	--bs-accordion-active-bg: lightgray;
 }
 
 .accordion-button {
